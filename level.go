@@ -8,6 +8,7 @@ const (
 	XLogLevelWarn
 	XLogLevelError
 	XLogLevelFatal
+	XlogLevelNone //增加 日志开关 ，初始化此 level 不打印任何日志
 )
 
 //日志类型常量定义
