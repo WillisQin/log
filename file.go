@@ -85,9 +85,9 @@ func (c *XFile) splitLog() {
 	c.File.Close()
 	var newFilename string
 	if now.Hour() == 00 {
-		newFilename = fmt.Sprintf("%s.%s.log", "c.filename", fmt.Sprintf("%4d-%02d-%02d-%02d", now.Year(), now.Month(), now.Day()-1, 23))
-	}else {
-		newFilename = fmt.Sprintf("%s.%s.log", "c.filename", fmt.Sprintf("%4d-%02d-%02d-%02d", now.Year(), now.Month(), now.Day(), now.Hour()-1))
+		newFilename = fmt.Sprintf("%s.%s.log", c.filename, fmt.Sprintf("%4d-%02d-%02d-%02d", now.Year(), now.Month(), now.Day()-1, 23))
+	} else {
+		newFilename = fmt.Sprintf("%s.%s.log", c.filename, fmt.Sprintf("%4d-%02d-%02d-%02d", now.Year(), now.Month(), now.Day(), now.Hour()-1))
 	}
 	os.Rename(c.filename, newFilename)
 	c.Init()
