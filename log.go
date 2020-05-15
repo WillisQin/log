@@ -7,12 +7,12 @@ var logger XLog = newXLog(XLogTypeConsole, XLogLevelDebug, "", "default")
 type XLog interface {
 	//接口方法和签名,用户可以传入字符串和其他可变参数
 	Init() error //初始化文件方法
-	LogDebug(fmt string, args ...interface{})
-	LogTrace(fmt string, args ...interface{})
-	LogInfo(fmt string, args ...interface{})
-	LogWarn(fmt string, args ...interface{})
-	LogError(fmt string, args ...interface{})
-	LogFatal(fmt string, args ...interface{})
+	Debug(fmt string, args ...interface{})
+	Trace(fmt string, args ...interface{})
+	Info(fmt string, args ...interface{})
+	Warn(fmt string, args ...interface{})
+	Error(fmt string, args ...interface{})
+	Fatal(fmt string, args ...interface{})
 	Close() //关闭文件
 	//可以让用户设置日志级别的方法，常量在level.go中定义
 	SetLevel(level int)
@@ -49,23 +49,23 @@ func Init(logType, level int, filename, module string) error {
 }
 
 //方便用户使用，封装函数
-func LogDebug(fmt string, args ...interface{}) {
-	logger.LogDebug(fmt, args...)
+func Debug(fmt string, args ...interface{}) {
+	logger.Debug(fmt, args...)
 }
-func LogTrace(fmt string, args ...interface{}) {
-	logger.LogTrace(fmt, args...)
+func Trace(fmt string, args ...interface{}) {
+	logger.Trace(fmt, args...)
 }
-func LogInfo(fmt string, args ...interface{}) {
-	logger.LogInfo(fmt, args...)
+func Info(fmt string, args ...interface{}) {
+	logger.Info(fmt, args...)
 }
-func LogWarn(fmt string, args ...interface{}) {
-	logger.LogWarn(fmt, args...)
+func Warn(fmt string, args ...interface{}) {
+	logger.Warn(fmt, args...)
 }
-func LogError(fmt string, args ...interface{}) {
-	logger.LogError(fmt, args...)
+func Error(fmt string, args ...interface{}) {
+	logger.Error(fmt, args...)
 }
-func LogFatal(fmt string, args ...interface{}) {
-	logger.LogFatal(fmt, args...)
+func Fatal(fmt string, args ...interface{}) {
+	logger.Fatal(fmt, args...)
 }
 func Close() {
 	logger.Close()

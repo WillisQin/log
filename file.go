@@ -94,7 +94,7 @@ func (c *XFile) splitLog() {
 }
 
 //定义实现每个日志级别的方法,即实现了XLog接口
-func (c *XFile) LogDebug(format string, args ...interface{}) {
+func (c *XFile) Debug(format string, args ...interface{}) {
 
 	//判断如果日志级别大于Debug，就不执行
 	if c.level > XLogLevelDebug {
@@ -105,7 +105,7 @@ func (c *XFile) LogDebug(format string, args ...interface{}) {
 
 }
 
-func (c *XFile) LogTrace(format string, args ...interface{}) {
+func (c *XFile) Trace(format string, args ...interface{}) {
 	if c.level > XLogLevelTrace {
 		return
 	}
@@ -113,7 +113,7 @@ func (c *XFile) LogTrace(format string, args ...interface{}) {
 	c.writeToChan(XLogLevelTrace, c.module, format, args...)
 }
 
-func (c *XFile) LogInfo(format string, args ...interface{}) {
+func (c *XFile) Info(format string, args ...interface{}) {
 	if c.level > XLogLevelInfo {
 		return
 	}
@@ -121,7 +121,7 @@ func (c *XFile) LogInfo(format string, args ...interface{}) {
 	c.writeToChan(XLogLevelInfo, c.module, format, args...)
 }
 
-func (c *XFile) LogWarn(format string, args ...interface{}) {
+func (c *XFile) Warn(format string, args ...interface{}) {
 	if c.level > XLogLevelWarn {
 		return
 	}
@@ -129,7 +129,7 @@ func (c *XFile) LogWarn(format string, args ...interface{}) {
 	c.writeToChan(XLogLevelWarn, c.module, format, args...)
 }
 
-func (c *XFile) LogError(format string, args ...interface{}) {
+func (c *XFile) Error(format string, args ...interface{}) {
 	if c.level > XLogLevelError {
 		return
 	}
@@ -137,7 +137,7 @@ func (c *XFile) LogError(format string, args ...interface{}) {
 	c.writeToChan(XLogLevelError, c.module, format, args...)
 }
 
-func (c *XFile) LogFatal(format string, args ...interface{}) {
+func (c *XFile) Fatal(format string, args ...interface{}) {
 	if c.level > XLogLevelFatal {
 		return
 	}

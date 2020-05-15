@@ -27,8 +27,8 @@ func (c *XConsole) Init() (err error) {
 	return nil
 }
 
-//日志格式：2018-10-26 01:17:40.222 DEBUG  use_service(模块) (file.go:LogDebug:332) this test txt
-func (c *XConsole) LogDebug(format string, args ...interface{}) {
+//日志格式：2018-10-26 01:17:40.222 DEBUG  use_service(模块) (file.go:Debug:332) this test txt
+func (c *XConsole) Debug(format string, args ...interface{}) {
 
 	//判断如果日志级别大于Debug，就不执行
 	if c.level > XLogLevelDebug {
@@ -40,7 +40,7 @@ func (c *XConsole) LogDebug(format string, args ...interface{}) {
 
 }
 
-func (c *XConsole) LogTrace(format string, args ...interface{}) {
+func (c *XConsole) Trace(format string, args ...interface{}) {
 
 	if c.level > XLogLevelTrace {
 		return
@@ -51,7 +51,7 @@ func (c *XConsole) LogTrace(format string, args ...interface{}) {
 
 }
 
-func (c *XConsole) LogInfo(format string, args ...interface{}) {
+func (c *XConsole) Info(format string, args ...interface{}) {
 
 	if c.level > XLogLevelInfo {
 		return
@@ -62,7 +62,7 @@ func (c *XConsole) LogInfo(format string, args ...interface{}) {
 
 }
 
-func (c *XConsole) LogWarn(format string, args ...interface{}) {
+func (c *XConsole) Warn(format string, args ...interface{}) {
 
 	if c.level > XLogLevelWarn {
 		return
@@ -73,7 +73,7 @@ func (c *XConsole) LogWarn(format string, args ...interface{}) {
 
 }
 
-func (c *XConsole) LogError(format string, args ...interface{}) {
+func (c *XConsole) Error(format string, args ...interface{}) {
 
 	if c.level > XLogLevelError {
 		return
@@ -84,7 +84,7 @@ func (c *XConsole) LogError(format string, args ...interface{}) {
 
 }
 
-func (c *XConsole) LogFatal(format string, args ...interface{}) {
+func (c *XConsole) Fatal(format string, args ...interface{}) {
 
 	if c.level > XLogLevelFatal {
 		return
