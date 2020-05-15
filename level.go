@@ -1,4 +1,4 @@
-package xlog
+package log
 
 //日志级别常量定义 1 2 ...以此类推用ioto自动设置常量
 const (

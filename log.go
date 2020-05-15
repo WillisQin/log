@@ -1,4 +1,4 @@
-package xlog
+package log
 
 //定义全局变量；防止用户不初始化logger(接口类型变量不初始化会pinic)，给默认值为console;日志初始化之前可以用日志库追踪问题
 var logger XLog = newXLog(XLogTypeConsole, XLogLevelDebug, "", "default")
